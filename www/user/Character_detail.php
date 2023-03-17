@@ -1,11 +1,16 @@
 <?php
 session_start();
 
-
+// Inclusution des models
 require('../../models/Character.php');
 require('../../models/BDD.php');
-use model\BDD;
-@$perso = BDD::affiche($id);
+
+// Utilisation du model BDD.php
+use Model\BDD;
+
+// Affectation des variable id et perso
+$id = $_GET['id'];
+$perso = BDD::affiche($id);
 ?>
 <html>
 
@@ -17,11 +22,11 @@ use model\BDD;
 <body>
     <?php foreach ($perso as $p): ?>
         <div class="Container">
-            <img class="Character" src="<?php echo $p->getImageC(); ?>">
+            <img class="Character" src="<?php echo $p['image']; ?>">
         </div>
         <div class="Name">
             <h1>
-                <?php echo $p->getNomC(); ?>
+                <?php echo $p['nom']; ?>
             </h1>
         </div>
         <div class="table">
@@ -40,22 +45,22 @@ use model\BDD;
                 <tbody>
                     <th scope="row"></th>
                     <td>
-                        <?php echo $p->getDescription(); ?>
+                        <?php echo $p['description']; ?>
                     </td>
                     <td>
-                        <?php echo $p->getWeapons(); ?>
+                        <?php echo $p['weapons']; ?>
                     </td>
                     <td>
-                        <?php echo $p->getStrength(); ?>
+                        <?php echo $p['strength']; ?>
                     </td>
                     <td>
-                        <?php echo $p->getDefence(); ?>
+                        <?php echo $p['defence']; ?>
                     </td>
                     <td>
-                        <?php echo $p->getDexterity(); ?>
+                        <?php echo $p['dexterity']; ?>
                     </td>
                     <td>
-                        <?php echo $p->getSpeed(); ?>
+                        <?php echo $p['speed']; ?>
                     </td>
                 </tbody>
             </table>

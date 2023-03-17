@@ -10,3 +10,4 @@ CREATE TABLE "character" (
 	"speed"	INTEGER,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
+INSERT INTO character("id","nom", "description", "weapons", "image", "strength", "defence", "dexterity", "speed") VALUES(1,"Bödvar", "idk", "épée et marteau","../www/img/image_persos/BÖDVAR_Default_Classic_Colors.png", 1,1,1,1);

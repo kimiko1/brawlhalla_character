@@ -39,10 +39,10 @@ $perso = BDD::afficheAll();
 
                     <div class="col-3">
                         <h2>
-                            <?php echo $p->getNomC(); ?>
+                            <?php echo $p['nom'];?>
                         </h2>
-                        <a href="Character_detail.php?id=<?php echo $p->getIdC(); ?>">
-                            <img src="<?php echo $p->getImageC(); ?>">
+                        <a href="Character_detail.php?id=<?php echo $p['id']; ?>">
+                            <img src="<?php echo $p['image']; ?>">
                         </a>
                     </div>
                 <?php endforeach; ?>

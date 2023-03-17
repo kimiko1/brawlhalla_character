@@ -6,34 +6,53 @@ use SQLite3;
 
 class BDD
 {
-    private static string $cheminDeLaBDD = '../../data/data.db';
+    private static string $cheminDeLaBDD = '../../data/database.db';
 
-    static public function affiche($id)
+    static public function affiche($id): array
     {
-        $id = $_GET['id'];
-        $conn = new SQLite3(BDD::$cheminDeLaBDD);
-        $req = $conn->query("SELECT * from character WHERE idC=$id;");
-        $product = array();
-        $results = $req;
-        if ($results) {
-            while ($row = $results->fetchArray()) {
-                array_push($product, new Character($row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8]));
+        $bdd = new SQLite3(BDD::$cheminDeLaBDD);
+        // Construction de la requête SQL
+        $requete = "select * from character where id='$id';";
+
+        // Envoi de la requête SQL
+        $resultats = $bdd->query($requete);
+
+        // Création d'un tableau vide
+        $persos = array();
+
+        // La requête a renvoyé des éléments ?
+        if ($resultats) {
+            // Récupération des lignes de la table
+            while ($res = $resultats->fetchArray(1)) {
+                // Chaque enregistrement vient enrichir le tableau.
+                $persos[] = $res;
             }
         }
-        return $product;
+
+        return $persos;
     }
-    static public function afficheAll()
+    static public function afficheAll(): array
     {
-        $conn = new SQLite3(BDD::$cheminDeLaBDD);
-        @$req = $conn->query("SELECT * from character;");
-        $product = array();
-        $results = $req;
-        if ($results) {
-            while ($row = $results->fetchArray()) {
-                array_push($product, new Character($row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8]));
+        $bdd = new SQLite3(BDD::$cheminDeLaBDD);
+        // Construction de la requête SQL
+        $requete = "select * from character;";
+
+        // Envoi de la requête SQL
+        $resultats = $bdd->query($requete);
+
+        // Création d'un tableau vide
+        $perso = array();
+
+        // La requête a renvoyé des éléments ?
+        if ($resultats) {
+            // Récupération des lignes de la table
+            while ($res = $resultats->fetchArray(1)) {
+                // Chaque enregistrement vient enrichir le tableau.
+                $perso[] = $res;
             }
         }
-        return $product;
+
+        return $perso;
     }
 
     static function usertype($email)
