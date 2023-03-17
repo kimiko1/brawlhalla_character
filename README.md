@@ -1,4 +1,4 @@
-Puis dans le répertoire data, créer votre base de test via la commande: 
+Dans le répertoire data, créer votre base de test via la commande: 
 ```sh
 sqlite3 database.db < init-base-test.sql
 ```
