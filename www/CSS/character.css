@@ -1,0 +1,28 @@
+body{
+    background: url('../img/images_pages_persos/background_img.jpeg') no-repeat;
+    background-position: top;
+    background-size: 25%;
+    background-color: #0d0d0d;
+} 	
+.Container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+img.Character{
+    margin-top: 3%;
+}
+
+div.Name{
+    text-align: center;
+    color: white;
+    margin-top: 7%;
+    margin-bottom: 50px;
+}
+
+th,td{
+    color: white;
+    text-align: center;
+}

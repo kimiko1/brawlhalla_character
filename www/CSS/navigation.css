@@ -1,0 +1,6 @@
+.navbar{
+    position:absolute;
+    margin:30px;
+    color: blue;
+    display: flex;
+}
