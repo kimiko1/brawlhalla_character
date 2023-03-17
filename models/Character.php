@@ -9,11 +9,11 @@ namespace Model;
 
 class Character
 {
-    private $idC;
-    private $nomC;
+    private $id;
+    private $nom;
     private $descrition;
     private $weapons;
-    private $imageC;
+    private $image;
     private $strength;
     private $defence;
     private $dexterity;

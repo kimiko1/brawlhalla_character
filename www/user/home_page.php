@@ -10,7 +10,7 @@ use Model\BDD;
 
 // Affectation des variable perso et $role
 $perso = BDD::afficheAll();
-@$role = BDD::usertype($_SESSION['email']);
+
 ?>
 
 <!doctype html>
